@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+
+if [ -f "/config/config.php" ]; then
+	rm -rf /app/paste/install
+fi
+
+ln -sf /config/config.php /app/paste/config.php
+
+# permissions
+chown -R abc:abc \
+	/config \
+	/app/paste
